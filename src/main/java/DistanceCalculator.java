@@ -1,5 +1,3 @@
-
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -37,7 +35,8 @@ public class DistanceCalculator {
 				}
 				JSONObject jsonObj = new JSONObject(outputString);
 		        String distance = jsonObj.getJSONArray("rows").getJSONObject(0).getJSONArray("elements").getJSONObject(0).getJSONObject("distance").getString("text");
-		        System.out.println("Distnace between locations is "+distance);				
+		        System.out.println("Distnace between locations is "+distance);	
+		        
 			}
 			
 
@@ -97,6 +96,14 @@ public class DistanceCalculator {
 
 		}
 		return finalList;
+	}
+	
+	public float parse(String string, String suffix) { // suffix can be m, km etc.
+	    if (!string.endsWith(suffix)) {
+	        throw new IllegalArgumentException();
+	    }
+	    string = string.substring(0, string.length() - suffix.length()); // get rid of the suffix we have at the end
+	    return Float.parseFloat(string); // parse the float from what we have left
 	}
 
 }
