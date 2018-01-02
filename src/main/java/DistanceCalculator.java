@@ -51,10 +51,10 @@ public class DistanceCalculator {
 	private static List<String> fetchStudentAndDonar() {
 
 		// These values would be comming from db
-		String studentPrimaryLocation = "Pune";
-		String donorsPrimaryLocation = "Indore";
-		String studentSecondaryLocation = "Mumbai";
-		String donorsSecondaryLocation = "Pune";
+		String studentPrimaryLocation = "411027";
+		String donorsPrimaryLocation = "411028";
+		String studentSecondaryLocation = "411029";
+		String donorsSecondaryLocation = "411030";
 
 		// create a combination for search
 		Map<String, String> valuesMap = new HashMap<>();
